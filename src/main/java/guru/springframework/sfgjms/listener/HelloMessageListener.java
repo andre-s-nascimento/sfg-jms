@@ -2,7 +2,6 @@ package guru.springframework.sfgjms.listener;
 
 import guru.springframework.sfgjms.config.JmsConfig;
 import guru.springframework.sfgjms.model.HelloWorldMessage;
-import jakarta.jms.Destination;
 import jakarta.jms.JMSException;
 import jakarta.jms.Message;
 import java.util.UUID;

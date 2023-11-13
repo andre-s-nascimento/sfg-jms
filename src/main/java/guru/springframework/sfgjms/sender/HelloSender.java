@@ -8,6 +8,7 @@ import jakarta.jms.JMSException;
 import jakarta.jms.Message;
 import jakarta.jms.Session;
 import java.util.UUID;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.core.MessageCreator;
@@ -42,7 +43,8 @@ public class HelloSender {
         JmsConfig.MY_SEND_RCV_QUEUE,
         new MessageCreator() {
           @Override
-          public Message createMessage(Session session) throws JMSException {
+          @NonNull
+          public Message createMessage(@NonNull Session session) throws JMSException {
             Message helloMessage = null;
             try {
               helloMessage = session.createTextMessage(objectMapper.writeValueAsString(message));
